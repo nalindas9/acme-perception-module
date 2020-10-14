@@ -24,6 +24,9 @@ before_install:
   - pip install --user cpp-coveralls
 install:
   - sudo apt-get install -y -qq lcov
+  # Install project dependencies
+  - sudo chmod +x travis_dependencies.sh
+  - ./travis_dependencies.sh
 script:
   - export CXX=$COMPILER;
   - mkdir build
