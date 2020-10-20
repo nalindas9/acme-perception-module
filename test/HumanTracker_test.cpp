@@ -19,8 +19,8 @@
  * @brief Class initialization test
  * **/
 TEST(HumanTracker, ClassInitialization) {
-  mtp::HumanTracker dummy_humanTracker("new_robot_frame", 
-                                       "new_input_source", 
+  mtp::HumanTracker dummy_humanTracker("new_robot_frame",
+                                       "new_input_source",
                                        "new_input_path");
   EXPECT_EQ("new_robot_frame", dummy_humanTracker.getRobotFrame());
   EXPECT_EQ("new_input_source", dummy_humanTracker.getInputSource());
@@ -31,8 +31,8 @@ TEST(HumanTracker, ClassInitialization) {
  * @brief Setter methods test
  * **/
 TEST(HumanTracker, SetterMethods) {
-   mtp::HumanTracker dummy_humanTracker("new_robot_frame", 
-                                       "new_input_source", 
+  mtp::HumanTracker dummy_humanTracker("new_robot_frame",
+                                       "new_input_source",
                                        "new_input_path");
   dummy_humanTracker.setRobotFrame("new_robot_frame");
   dummy_humanTracker.setInputSource("new_input_source");
@@ -46,8 +46,8 @@ TEST(HumanTracker, SetterMethods) {
  * @brief Getter methods test
  * **/
 TEST(HumanTracker, GetterMethods) {
-   mtp::HumanTracker dummy_humanTracker("new_robot_frame", 
-                                       "new_input_source", 
+  mtp::HumanTracker dummy_humanTracker("new_robot_frame",
+                                       "new_input_source",
                                        "new_input_path");
   EXPECT_EQ("new_robot_frame", dummy_humanTracker.getRobotFrame());
   EXPECT_EQ("new_input_source", dummy_humanTracker.getInputSource());

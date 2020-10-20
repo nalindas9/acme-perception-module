@@ -26,6 +26,7 @@ class Utils {
      * @brief YOLOv3 model weights
      * **/
     std::string modelWeights;
+
  public:
     /**
      * @brief Getter for model configuration
@@ -67,6 +68,6 @@ class Utils {
      * @param None
      * @return None
      * **/
-    ~ Utils();
+    ~Utils();
 };
-} // namespace mtp
+}  // namespace mtp
