@@ -15,7 +15,6 @@
  */
 #include "utils.hpp"
 #include <opencv2/opencv.hpp>
-#include <opencv2/dnn/dnn.hpp>
 
 namespace mtp {
 /**
@@ -126,24 +125,17 @@ class YoloV3 {
      * @param None
      * @return None
      * **/
-    void YoloV3();
+    YoloV3();
 
     /**
      * @brief Constructor
      * @param None
      * @return None
      * **/
-    void YoloV3();
-
-    /**
-     * @brief Constructor
-     * @param None
-     * @return None
-     * **/
-    void YoloV3(double conf_threshold_value, 
+    YoloV3(double conf_threshold_value, 
                 double nms_threshold_value,
                 int input_width_value,
-                int input_height_value); 
+                int input_height_value);
    /**
      * @brief Destructor
      * @param None
