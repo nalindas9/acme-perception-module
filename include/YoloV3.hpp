@@ -42,6 +42,7 @@ class YoloV3 {
      * @brief Input height
      * **/
     double inputHeight;
+
  public:
     /**
      * @brief Setter for confidence threshold
@@ -132,7 +133,7 @@ class YoloV3 {
      * @param None
      * @return None
      * **/
-    YoloV3(double conf_threshold_value, 
+    YoloV3(double conf_threshold_value,
                 double nms_threshold_value,
                 int input_width_value,
                 int input_height_value);
@@ -141,6 +142,6 @@ class YoloV3 {
      * @param None
      * @return None
      * **/
-    ~ YoloV3();
+    ~YoloV3();
 };
-} // namespace mtp
+}  // namespace mtp

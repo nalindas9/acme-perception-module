@@ -46,21 +46,21 @@ int mtp::YoloV3::getInputWidth() {
 }
 
 cv::Mat mtp::YoloV3::preProcess(const cv::Mat& frame) {
-    cv::Mat output_blob(416, 416, CV_8UC3, cv::Scalar(0,0,255));
-    return output_blob; 
+    cv::Mat output_blob(416, 416, CV_8UC3, cv::Scalar(0, 0, 255));
+    return output_blob;
 }
 
 cv::Mat mtp::YoloV3::postProcess(const cv::Mat& frame) {
-    cv::Mat output_blob(416, 416, CV_8UC3, cv::Scalar(0,0,255));
-    return output_blob; 
+    cv::Mat output_blob(416, 416, CV_8UC3, cv::Scalar(0, 0, 255));
+    return output_blob;
 }
 
 cv::Mat mtp::YoloV3::runInference(const cv::Mat& frame) {
-    cv::Mat output_blob(416, 416, CV_8UC3, cv::Scalar(0,0,255));
-    return output_blob; 
+    cv::Mat output_blob(416, 416, CV_8UC3, cv::Scalar(0, 0, 255));
+    return output_blob;
 }
 
-mtp::YoloV3::YoloV3(double conf_threshold_value, 
+mtp::YoloV3::YoloV3(double conf_threshold_value,
                 double nms_threshold_value,
                 int input_width_value,
                 int input_height_value) {
@@ -70,6 +70,6 @@ mtp::YoloV3::YoloV3(double conf_threshold_value,
     inputWidth = input_width_value;
 }
 
-mtp::YoloV3::YoloV3() {};
+mtp::YoloV3::YoloV3() {}
 
-mtp::YoloV3::~YoloV3() {};
+mtp::YoloV3::~YoloV3() {}
