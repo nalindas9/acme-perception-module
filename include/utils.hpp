@@ -53,14 +53,14 @@ class Utils {
      * @param weight_value Model weights 
      * @return None
      * **/
-    void getModelWeights(std::string weight_value);
+    void setModelWeights(std::string weight_value);
 
     /**
      * @brief Constructor
      * @param None
      * @return None
      * **/
-    void YoloV3();
+    Utils();
 
     /**
      * @brief Destructor
