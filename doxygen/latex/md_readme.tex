@@ -1,0 +1,114 @@
+\href{https://travis-ci.org/github/nalindas9/acme-perception-module}{\texttt{ }} \href{https://coveralls.io/github/nalindas9/acme-perception-module}{\texttt{ }} \hypertarget{md_readme_autotoc_md1}{}\doxysection{$<$a href=\char`\"{}https\+://github.\+com/nalindas9/acme-\/perception-\/module/blob/feature/nalindas9/initialize-\/repository/\+LICENSE\char`\"{}$>$$<$img src=\char`\"{}https\+://img.\+shields.\+io/badge/\+License-\/\+BSD\%203-\/-\/\+Clause-\/blue.\+svg\char`\"{} alt=\char`\"{}\+License\char`\"{}/$>$$<$/a$>$}\label{md_readme_autotoc_md1}
+\hypertarget{md_readme_autotoc_md2}{}\doxysection{Team Members}\label{md_readme_autotoc_md2}
+
+\begin{DoxyEnumerate}
+\item Nalin Das (nalindas9)
+\item Nidhi Bhojak (nbhojak07)
+\end{DoxyEnumerate}\hypertarget{md_readme_autotoc_md3}{}\doxysection{Overview}\label{md_readme_autotoc_md3}
+Since the beginning of the 21st century, development of autonomous robots has been booming. And one of the important modules in Autonomous Intelligent Systems is Obstacle Detection and Tracking. In order for an autonomous robot to function properly, it must be capable of gathering knowledge about its surroundings and make important decisions based on that. Vision based decision making is used widely to address this problem. Here, in this project, we plan to design and develop a human obstacle detector and tracker module for the perception stack of ACME Robotic’s AMR (Autonomous Mobile Robot) platform. Currently,the AMR fleet at ACME Robotics is capable of autonomously navigating the warehouse and moving packages.
+
+However, we face a challenge. The workers in the warehouse can dynamically come infront of the robot, in which case we have two choices, either to stop, or to reroute the robot around the human. The second scenario is better since it saves time and effectively dodges the human without creating any disturbance in the environment.
+
+We aim to solve this problem by integrating our human obstacle detector and tracker module to detect a human and output the humans location (x,y coordinates in camera frame) which can be transformed to the robot’s reference frame. It can be used directly by the planning stack working on the dynamic obstacle avoidance and rerouting algorithm.
+
+We assume we will be provided with one monocular video camera, giving us nxn RGB image as input as well as we can also take an image or a video for an input.\hypertarget{md_readme_autotoc_md4}{}\doxysection{Technologies Used}\label{md_readme_autotoc_md4}
+We will be using Agile Development process and the quality will be ensured by unit testing and cppcheck. Test Driven Development will be used.
+\begin{DoxyItemize}
+\item Programming language -\/ C++ 11/14
+\item Build System -\/ CMake
+\item Operating System -\/ Ubuntu 18.\+04
+\item Open source libraries -\/ Open\+CV (Apache License), YOLOv3 (MIT LICENSE)
+\item Automated unit testing -\/ Travis CI
+\item Code coverage -\/ Coveralls
+\item Version Control -\/ Git \& Github
+\end{DoxyItemize}\hypertarget{md_readme_autotoc_md5}{}\doxysection{Probable Risks \& Mitigation}\label{md_readme_autotoc_md5}
+
+\begin{DoxyItemize}
+\item The lighting in the scene could vary, which can cause the predictions to be incorrect. We plan to apply some sort of intensity correction techniques like histogram equalization and adjusting the exposure.
+\item There could be some incorrect bounding boxes predicted in some intermediate frames in the camera feed. This can cause the tracking to be incorrect. In that case, we could apply averaging of bounding boxes over previous “n” frames to get a better estimate of the location.
+\end{DoxyItemize}\hypertarget{md_readme_autotoc_md6}{}\doxysection{License}\label{md_readme_autotoc_md6}
+
+\begin{DoxyItemize}
+\item This module has been developed under the 3-\/Clause BSD License.
+\item Please go through the \href{https://github.com/nalindas9/acme-perception-module/blob/master/LICENSE}{\texttt{ LICENSE}} before cloning the repository.
+\end{DoxyItemize}\hypertarget{md_readme_autotoc_md7}{}\doxysection{AIP and Sprint Documents}\label{md_readme_autotoc_md7}
+
+\begin{DoxyItemize}
+\item You can view the AIP Google Sheets \href{https://docs.google.com/spreadsheets/d/1oqgiFG7CPCP2yYUtMuwlLh8nGD6KBANpSUh5-Uhm9dw/edit?usp=sharing}{\texttt{ here}}
+\item You can view the spring review notes \href{https://docs.google.com/document/d/1hAAtv5MEF9csP_6ozN08iaaIumDudBxkSe3yPz_ZwQw/edit?usp=sharing}{\texttt{ here}}
+\end{DoxyItemize}\hypertarget{md_readme_autotoc_md8}{}\doxysection{Install Open\+CV}\label{md_readme_autotoc_md8}
+
+\begin{DoxyItemize}
+\item The perception module utilizes Open\+CV. Run the below commands to install Open\+CV before cloning this repository. 
+\end{DoxyItemize}\hypertarget{md_readme_autotoc_md9}{}\doxysubsubsection{System Update}\label{md_readme_autotoc_md9}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo apt update }
+\DoxyCodeLine{sudo apt upgrade}
+
+\end{DoxyCode}
+ \hypertarget{md_readme_autotoc_md10}{}\doxysubsubsection{Install Open\+CV Dependencies}\label{md_readme_autotoc_md10}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo apt install build-\/essential cmake git libgtk2.0-\/dev pkg-\/config libavcodec-\/dev libavformat-\/dev libswscale-\/dev}
+\DoxyCodeLine{sudo apt install python3.5-\/dev python3-\/numpy libtbb2 libtbb-\/dev}
+\DoxyCodeLine{sudo apt install libjpeg-\/dev libpng-\/dev libtiff5-\/dev libjasper-\/dev libdc1394-\/22-\/dev libeigen3-\/dev libtheora-\/dev libvorbis-\/dev libxvidcore-\/dev libx264-\/dev sphinx-\/common libtbb-\/dev yasm libfaac-\/dev libopencore-\/amrnb-\/dev libopencore-\/amrwb-\/dev libopenexr-\/dev libgstreamer-\/plugins-\/base1.0-\/dev libavutil-\/dev libavfilter-\/dev libavresample-\/dev}
+
+\end{DoxyCode}
+\hypertarget{md_readme_autotoc_md11}{}\doxysubsubsection{Install Open\+CV}\label{md_readme_autotoc_md11}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git clone https://github.com/opencv/opencv.git}
+\DoxyCodeLine{cd opencv }
+\DoxyCodeLine{git checkout 3.3.0 }
+\DoxyCodeLine{cd ..}
+\DoxyCodeLine{git clone https://github.com/opencv/opencv\_contrib.git}
+\DoxyCodeLine{cd opencv\_contrib}
+\DoxyCodeLine{git checkout 3.3.0}
+\DoxyCodeLine{cd ..}
+\DoxyCodeLine{cd opencv}
+\DoxyCodeLine{mkdir build}
+\DoxyCodeLine{cd build}
+\DoxyCodeLine{cmake -\/D CMAKE\_BUILD\_TYPE=RELEASE -\/D CMAKE\_INSTALL\_PREFIX=/usr/local -\/D INSTALL\_C\_EXAMPLES=ON -\/D WITH\_TBB=ON -\/D WITH\_V4L=ON -\/D WITH\_QT=ON -\/D OPENCV\_EXTRA\_MODULES\_PATH=../../opencv\_contrib/modules -\/D BUILD\_EXAMPLES=ON ..}
+\DoxyCodeLine{make -\/j\$(nproc)}
+\DoxyCodeLine{sudo make install}
+\DoxyCodeLine{sudo /bin/bash -\/c 'echo "{}/usr/local/lib"{} > /etc/ld.so.conf.d/opencv.conf'}
+\DoxyCodeLine{sudo ldconfig}
+
+\end{DoxyCode}
+ \hypertarget{md_readme_autotoc_md12}{}\doxysection{YOLO Dependencies}\label{md_readme_autotoc_md12}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{wget https://pjreddie.com/media/files/yolov3.weights}
+\DoxyCodeLine{wget https://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg?raw=true -\/O ./yolov3.cfg}
+\DoxyCodeLine{wget https://github.com/pjreddie/darknet/blob/master/data/coco.names?raw=true -\/O ./coco.names}
+
+\end{DoxyCode}
+\hypertarget{md_readme_autotoc_md13}{}\doxysection{Standard install via command-\/line}\label{md_readme_autotoc_md13}
+Switch to the directory where you want to clone this repository and run the following command\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git clone -\/-\/recursive https://github.com/nalindas9/acme-\/perception-\/module}
+\DoxyCodeLine{cd <path to repository>}
+\DoxyCodeLine{mkdir build}
+\DoxyCodeLine{cd build}
+\DoxyCodeLine{cmake ..}
+\DoxyCodeLine{make}
+\DoxyCodeLine{Run tests: ./test/cpp-\/test}
+\DoxyCodeLine{Run program: ./app/shell-\/app}
+
+\end{DoxyCode}
+\hypertarget{md_readme_autotoc_md14}{}\doxysection{Building for code coverage}\label{md_readme_autotoc_md14}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo apt-\/get install lcov}
+\DoxyCodeLine{cmake -\/D COVERAGE=ON -\/D CMAKE\_BUILD\_TYPE=Debug ../}
+\DoxyCodeLine{make}
+\DoxyCodeLine{make code\_coverage}
+
+\end{DoxyCode}
+ \hypertarget{md_readme_autotoc_md15}{}\doxysection{Access UML Diagrams}\label{md_readme_autotoc_md15}
+
+\begin{DoxyItemize}
+\item Open the directory of the project
+\item Within the UML directory, access the initial and revised UML diagrams. 
+\end{DoxyItemize}
