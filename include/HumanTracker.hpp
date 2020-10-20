@@ -13,7 +13,8 @@
  *  Header file for HumanTracker class.
  *
  */
-#include "include/YoloV3.hpp"
+#include "YoloV3.hpp"
+#include <string>
 
 namespace mtp {
 class HumanTracker {
@@ -21,7 +22,7 @@ class HumanTracker {
     /**
      * @brief YOLOv3 class object
      * **/
-    mtp::YoloV3 yolov3;
+    //mtp::YoloV3 yolov3;
     /**
      * @brief Robot frame to transform predictions to
      * **/
@@ -82,7 +83,7 @@ class HumanTracker {
      * @param None
      * @return None
      * **/
-    void HumanTracker();
+    HumanTracker();
 
     /**
      * @brief Constructor
@@ -91,9 +92,9 @@ class HumanTracker {
      * @param input_path Path to input source
      * @return None
      * **/
-    void HumanTracker(std::string robot_frame, 
-                      std::string input_source,
-                      std::string input_path);
+    HumanTracker(std::string robot_frame, 
+                 std::string input_source,
+                 std::string input_path);
 
     /**
      * @brief Destructor
