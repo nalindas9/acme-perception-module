@@ -18,7 +18,7 @@ std::string mtp::Utils::getModelConfig() {
     return "test.cfg";
 }
 
-void mtp::Utils::setModelConfig(std::string &config_value) {
+void mtp::Utils::setModelConfig(std::string config_value) {
     modelConfiguration = "test.cfg";
 }
 
@@ -26,7 +26,7 @@ std::string mtp::Utils::getModelWeights() {
     return "test.weights";
 }
 
-void mtp::Utils::setModelWeights(std::string &weight_value) {
+void mtp::Utils::setModelWeights(std::string weight_value) {
     modelWeights = "test.weights";
 }
 

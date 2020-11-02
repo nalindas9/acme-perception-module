@@ -13,7 +13,7 @@ option(COVERAGE "Generate Coverage Data" OFF)
 if (COVERAGE)
     include(CodeCoverage)
     set(LCOV_REMOVE_EXTRA "'vendor/*'")
-    setup_target_for_coverage(code_coverage test/cpp-test coverage)
+    setup_target_for_coverage(code_coverage test/human-tracker-module-test coverage)
     set(COVERAGE_SRCS app/main.cpp include/YoloV3.hpp include/utils.hpp include/HumanTracker.hpp)
 
     SET(CMAKE_CXX_FLAGS "-g -O0 -fprofile-arcs -ftest-coverage")
