@@ -76,11 +76,39 @@ void mtp::HumanTracker::runTrackerImage() {
 }
 
 void mtp::HumanTracker::runTrackerVideo() {
+    /*
     try {
+        // Read image
+        cv::VideoCapture capture;
+        cv::VideoWriter output_video;
+        capture.open(inputPath);
+        output_video.open()
+        std::cout << "Opened video ...\n";
+        // Perform detection pipeline
+        cv::Mat frame, input_blob;
+        while (1) {
+            capture >> frame;
+            if (frame.empty())
+                break;
+            input_blob = yolov3.preProcess(frame);
+            std::cout << "Frame preprocessed ...\n";
+            std::vector<cv::Mat> predictions = yolov3.runInference(input_blob);
+            std::cout << "Performed object detection ...\n";
+            // Write the frame to video file
+            cv::Mat output_frame;
+            frame.convertTo(output_frame, CV_8U);
+            std::string output_path = inputPath.replace(inputPath.end() - 4,
+                                                        inputPath.end(), 
+                                                        "_output.jpg");
+            cv::imwrite(output_path, output_frame);
+        }
+        std::cout << "Output file generated!\n";
+        capture.release();
 
     } catch (...) {
-        
+        std::cout << "Video file not provided or error in detection!\n";
     }
+    */
 }
 
 void mtp::HumanTracker::runTrackerWebcam() {
