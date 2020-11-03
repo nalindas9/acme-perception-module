@@ -15,21 +15,24 @@
 
 
 std::string mtp::Utils::getModelConfig() {
-    return "test.cfg";
+    return modelConfiguration;
 }
 
 void mtp::Utils::setModelConfig(std::string config_value) {
-    modelConfiguration = "test.cfg";
+    modelConfiguration = config_value;
 }
 
 std::string mtp::Utils::getModelWeights() {
-    return "test.weights";
+    return modelWeights;
 }
 
 void mtp::Utils::setModelWeights(std::string weight_value) {
-    modelWeights = "test.weights";
+    modelWeights = weight_value;
 }
 
-mtp::Utils::Utils() {}
+mtp::Utils::Utils() {
+    modelConfiguration = "../config/yolov3.cfg";
+    modelWeights = "../weights/yolov3.weights";
+}
 
 mtp::Utils::~Utils() {}

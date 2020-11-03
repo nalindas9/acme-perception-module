@@ -2,7 +2,7 @@ set(GTEST_SHUFFLE 1)
 
 add_executable(
     human-tracker-module-test
-    main.cpp
+    main_test.cpp
     utils_test.cpp
     ../app/utils.cpp
     YoloV3_test.cpp

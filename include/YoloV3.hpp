@@ -112,14 +112,15 @@ class YoloV3 {
      * @param frame Image frame  
      * @return Postprocessed image frame
      * **/
-    cv::Mat postProcess(const cv::Mat& frame);
+    cv::Mat postProcess(const cv::Mat& frame, 
+                        std::vector<cv::Mat>& predictions);
 
     /**
      * @brief Run YOLOv3 model inference 
      * @param frame Image frame
      * @return Get image with bounding box predictions
      * **/
-    cv::Mat runInference(const cv::Mat& frame);
+    std::vector<cv::Mat> runInference(const cv::Mat& frame);
 
     /**
      * @brief Constructor 

@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.2.1)
 project (human-tracker)
 
 # Find opencv package
-find_package(OpenCV REQUIRED)
+find_package(OpenCV 4.0.0 REQUIRED)
 
 # Add project cmake modules to path.
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake)
