@@ -14,6 +14,7 @@
  *
  */
 #include <string>
+#include <opencv2/opencv.hpp>
 
 namespace mtp {
 class Utils {
@@ -55,12 +56,32 @@ class Utils {
      * @return None
      * **/
     void setModelWeights(std::string weight_value);
+   
+   /**
+     * @brief Draws bounding box for the given coordinates
+     * @param frame Image frame
+     * @param class_id Class Id
+     * @param confidence Prediction confidence
+     * @param left Left corner of box
+     * @param top Top corner of box
+     * @param right Right corner of box
+     * @param bottom Bottom corner of box
+     * @return None
+     * **/
+    void drawBoundingBox(const cv::Mat &frame,
+                         int class_id,
+                         double confidence,
+                         int left,
+                         int top,
+                         int right, 
+                         int bottom);
 
     /**
      * @brief Constructor
      * @param None
      * @return None
      * **/
+
     Utils();
 
     /**

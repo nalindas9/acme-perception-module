@@ -22,7 +22,7 @@ class HumanTracker {
     /**
      * @brief YOLOv3 class object
      * **/
-    // mtp::YoloV3 yolov3;
+    mtp::YoloV3 yolov3;
     /**
      * @brief Robot frame to transform predictions to
      * **/
@@ -77,6 +77,34 @@ class HumanTracker {
      * @return None
      * **/
     void setInputPath(std::string input_path);
+
+    /**
+     * @brief Checks i/p source to run detector on
+     * @param parser CommandLineParser object
+     * @return 0 - image/1 - video/2 - webcam/-1 - None 
+     * **/
+    int inputParser(cv::CommandLineParser parser);
+
+   /**
+     * @brief Run Human Tracker on Image
+     * @param None
+     * @return None
+     * **/
+    void runTrackerImage();
+
+    /**
+     * @brief Run Human Tracker on Video
+     * @param None
+     * @return None
+     * **/
+    void runTrackerVideo();
+
+    /**
+     * @brief Run Human Tracker on Webcam
+     * @param None
+     * @return None
+     * **/
+    void runTrackerWebcam();
 
     /**
      * @brief Constructor
