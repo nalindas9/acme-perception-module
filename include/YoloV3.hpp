@@ -13,6 +13,8 @@
  *  Header file for YoloV3 class.
  *
  */
+#include <string>
+#include <vector>
 #include "utils.hpp"
 #include <opencv2/opencv.hpp>
 
@@ -112,7 +114,7 @@ class YoloV3 {
      * @param frame Image frame  
      * @return None
      * **/
-    void postProcess(const cv::Mat& frame, 
+    void postProcess(const cv::Mat& frame,
                         std::vector<cv::Mat>& predictions);
 
     /**

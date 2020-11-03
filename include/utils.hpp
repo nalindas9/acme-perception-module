@@ -56,8 +56,7 @@ class Utils {
      * @return None
      * **/
     void setModelWeights(std::string weight_value);
-   
-   /**
+    /**
      * @brief Draws bounding box for the given coordinates
      * @param frame Image frame
      * @param class_id Class Id
@@ -73,7 +72,7 @@ class Utils {
                          double confidence,
                          int left,
                          int top,
-                         int right, 
+                         int right,
                          int bottom);
 
     /**
