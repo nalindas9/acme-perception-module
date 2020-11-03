@@ -44,7 +44,7 @@ We will be using Agile Development process and the quality will be ensured by un
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{sudo apt update }
-\DoxyCodeLine{sudo apt upgrade}
+\DoxyCodeLine{sudo apt upgrade }
 
 \end{DoxyCode}
  \hypertarget{md_readme_autotoc_md10}{}\doxysubsubsection{Install Open\+CV Dependencies}\label{md_readme_autotoc_md10}
@@ -52,7 +52,7 @@ We will be using Agile Development process and the quality will be ensured by un
 \begin{DoxyCode}{0}
 \DoxyCodeLine{sudo apt install build-\/essential cmake git libgtk2.0-\/dev pkg-\/config libavcodec-\/dev libavformat-\/dev libswscale-\/dev}
 \DoxyCodeLine{sudo apt install python3.5-\/dev python3-\/numpy libtbb2 libtbb-\/dev}
-\DoxyCodeLine{sudo apt install libjpeg-\/dev libpng-\/dev libtiff5-\/dev libjasper-\/dev libdc1394-\/22-\/dev libeigen3-\/dev libtheora-\/dev libvorbis-\/dev libxvidcore-\/dev libx264-\/dev sphinx-\/common libtbb-\/dev yasm libfaac-\/dev libopencore-\/amrnb-\/dev libopencore-\/amrwb-\/dev libopenexr-\/dev libgstreamer-\/plugins-\/base1.0-\/dev libavutil-\/dev libavfilter-\/dev libavresample-\/dev}
+\DoxyCodeLine{sudo apt install libjpeg-\/dev libpng-\/dev libtiff5-\/dev libjasper-\/dev libdc1394-\/22-\/dev libeigen3-\/dev libtheora-\/dev libvorbis-\/dev libxvidcore-\/dev libx264-\/dev sphinx-\/common libtbb-\/dev yasm libfaac-\/dev libopencore-\/amrnb-\/dev libopencore-\/amrwb-\/dev libopenexr-\/dev libgstreamer-\/plugins-\/base1.0-\/dev libavutil-\/dev libavfilter-\/dev libavresample-\/dev }
 
 \end{DoxyCode}
 \hypertarget{md_readme_autotoc_md11}{}\doxysubsubsection{Install Open\+CV}\label{md_readme_autotoc_md11}
@@ -73,7 +73,7 @@ We will be using Agile Development process and the quality will be ensured by un
 \DoxyCodeLine{make -\/j\$(nproc)}
 \DoxyCodeLine{sudo make install}
 \DoxyCodeLine{sudo /bin/bash -\/c 'echo "{}/usr/local/lib"{} > /etc/ld.so.conf.d/opencv.conf'}
-\DoxyCodeLine{sudo ldconfig}
+\DoxyCodeLine{sudo ldconfig }
 
 \end{DoxyCode}
  \hypertarget{md_readme_autotoc_md12}{}\doxysection{YOLO Dependencies}\label{md_readme_autotoc_md12}
@@ -81,7 +81,7 @@ We will be using Agile Development process and the quality will be ensured by un
 \begin{DoxyCode}{0}
 \DoxyCodeLine{wget https://pjreddie.com/media/files/yolov3.weights}
 \DoxyCodeLine{wget https://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg?raw=true -\/O ./yolov3.cfg}
-\DoxyCodeLine{wget https://github.com/pjreddie/darknet/blob/master/data/coco.names?raw=true -\/O ./coco.names}
+\DoxyCodeLine{wget https://github.com/pjreddie/darknet/blob/master/data/coco.names?raw=true -\/O ./coco.names }
 
 \end{DoxyCode}
 \hypertarget{md_readme_autotoc_md13}{}\doxysection{Standard install via command-\/line}\label{md_readme_autotoc_md13}
@@ -94,7 +94,7 @@ Switch to the directory where you want to clone this repository and run the foll
 \DoxyCodeLine{cmake ..}
 \DoxyCodeLine{make}
 \DoxyCodeLine{Run tests: ./test/cpp-\/test}
-\DoxyCodeLine{Run program: ./app/shell-\/app}
+\DoxyCodeLine{Run program: ./app/shell-\/app }
 
 \end{DoxyCode}
 \hypertarget{md_readme_autotoc_md14}{}\doxysection{Building for code coverage}\label{md_readme_autotoc_md14}
@@ -103,7 +103,7 @@ Switch to the directory where you want to clone this repository and run the foll
 \DoxyCodeLine{sudo apt-\/get install lcov}
 \DoxyCodeLine{cmake -\/D COVERAGE=ON -\/D CMAKE\_BUILD\_TYPE=Debug ../}
 \DoxyCodeLine{make}
-\DoxyCodeLine{make code\_coverage}
+\DoxyCodeLine{make code\_coverage }
 
 \end{DoxyCode}
  \hypertarget{md_readme_autotoc_md15}{}\doxysection{Access UML Diagrams}\label{md_readme_autotoc_md15}
