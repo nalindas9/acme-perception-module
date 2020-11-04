@@ -13,6 +13,8 @@
  *  Header file for YoloV3 class.
  *
  */
+#include <string>
+#include <vector>
 #include "utils.hpp"
 #include <opencv2/opencv.hpp>
 
@@ -110,16 +112,24 @@ class YoloV3 {
     /**
      * @brief Postprocess the image
      * @param frame Image frame  
-     * @return Postprocessed image frame
+     * @return None
      * **/
-    cv::Mat postProcess(const cv::Mat& frame);
+    void postProcess(const cv::Mat& frame,
+                        std::vector<cv::Mat>& predictions);
 
     /**
      * @brief Run YOLOv3 model inference 
      * @param frame Image frame
      * @return Get image with bounding box predictions
      * **/
-    cv::Mat runInference(const cv::Mat& frame);
+    std::vector<cv::Mat> runInference(const cv::Mat& frame);
+
+    /**
+     * @brief Gets output layer names
+     * @param network DNN network object
+     * @return Array of output layer names
+     * **/
+    std::vector<std::string> getOutputLayerNames(const cv::dnn::Net& network);
 
     /**
      * @brief Constructor 

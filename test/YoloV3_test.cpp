@@ -44,7 +44,8 @@ TEST(YoloV3, PreProcessMethod) {
 TEST(YoloV3, PostProcessMethod) {
   mtp::YoloV3 dummy_yolov3(0.6, 0.2, 32, 32);
   cv::Mat frame  = cv::imread("../test.jpg");
-  EXPECT_NO_FATAL_FAILURE({dummy_yolov3.postProcess(frame);});
+  std::vector<cv::Mat> predictions = dummy_yolov3.runInference(frame);
+  EXPECT_NO_FATAL_FAILURE({dummy_yolov3.postProcess(frame, predictions);});
 }
 
 /**
