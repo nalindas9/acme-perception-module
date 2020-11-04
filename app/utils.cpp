@@ -17,7 +17,7 @@ std::string mtp::Utils::getModelConfig() {
     return modelConfiguration;
 }
 
-void mtp::Utils::setModelConfig(std::string config_value) {
+void mtp::Utils::setModelConfig(std::string &config_value) {
     modelConfiguration = config_value;
 }
 
@@ -25,7 +25,7 @@ std::string mtp::Utils::getModelWeights() {
     return modelWeights;
 }
 
-void mtp::Utils::setModelWeights(std::string weight_value) {
+void mtp::Utils::setModelWeights(std::string &weight_value) {
     modelWeights = weight_value;
 }
 
@@ -34,15 +34,15 @@ void mtp::Utils::drawBoundingBox(const cv::Mat &frame,
                                  double confidence,
                                  int left,
                                  int top,
-                                 int right, 
+                                 int right,
                                  int bottom) {
     // Draw a rectangle in the image for the given coordinates
     std::cout << "left: " << left << " top: " << top << std::endl;
     std::cout << "right: " << right << " bottom: " << bottom << std::endl;
-    cv::rectangle(frame, 
+    cv::rectangle(frame,
                   cv::Point(left, top),
-                  cv::Point(right, bottom), 
-                  cv::Scalar(0,128,0), 
+                  cv::Point(right, bottom),
+                  cv::Scalar(0, 128, 0),
                   3);
     std::cout << "Drawing bouding boxes ...\n";
     /*

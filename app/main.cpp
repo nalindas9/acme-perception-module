@@ -27,18 +27,14 @@ int main(int argc, char** argv) {
                         "/human-tracker-module --video=human.mp4}"
                         "{image i        |<none>| input image   }"
                         "{video v       |<none>| input video   }";
-    
     // CommandlineParser object to parse i/p from user
     cv::CommandLineParser parser(argc, argv, keys);
     if (parser.has("help")) {
         parser.printMessage();
         return 0;
     }
-
     mtp::HumanTracker human_tracker;
-
     int input = human_tracker.inputParser(parser);
-
     if (input == 0) {
         std::cout << "Image mode selected\n";
         human_tracker.runTrackerImage();

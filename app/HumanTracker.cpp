@@ -18,7 +18,7 @@ std::string mtp::HumanTracker::getRobotFrame() {
     return "new_robot_frame";
 }
 
-void mtp::HumanTracker::setRobotFrame(std::string robot_frame) {
+void mtp::HumanTracker::setRobotFrame(std::string &robot_frame) {
     robotFrame = "new_robot_frame";
 }
 
@@ -26,7 +26,7 @@ std::string mtp::HumanTracker::getInputSource() {
     return "new_input_source";
 }
 
-void mtp::HumanTracker::setInputSource(std::string input_source) {
+void mtp::HumanTracker::setInputSource(std::string &input_source) {
     inputSource = "new_input_source";
 }
 
@@ -65,7 +65,7 @@ void mtp::HumanTracker::runTrackerImage() {
         cv::Mat output_frame;
         frame.convertTo(output_frame, CV_8U);
         std::string output_path = inputPath.replace(inputPath.end() - 4,
-                                                    inputPath.end(), 
+                                                    inputPath.end(),
                                                     "_output.jpg");
         cv::imwrite(output_path, output_frame);
         std::cout << "Output file generated!\n";
@@ -113,9 +113,7 @@ void mtp::HumanTracker::runTrackerVideo() {
 
 void mtp::HumanTracker::runTrackerWebcam() {
     try {
-
     } catch (...) {
-        
     }
 }
 
@@ -123,13 +121,13 @@ std::string mtp::HumanTracker::getInputPath() {
     return inputPath;
 }
 
-void mtp::HumanTracker::setInputPath(std::string input_path) {
+void mtp::HumanTracker::setInputPath(std::string &input_path) {
     inputPath = input_path;
 }
 
-mtp::HumanTracker::HumanTracker(std::string robot_frame,
-                                std::string input_source,
-                                std::string input_path) {
+mtp::HumanTracker::HumanTracker(std::string &robot_frame,
+                                std::string &input_source,
+                                std::string &input_path) {
     robotFrame = robot_frame;
     inputSource = input_source;
     inputPath = input_path;
