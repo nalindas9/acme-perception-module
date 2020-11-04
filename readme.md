@@ -93,12 +93,12 @@ cmake ..
 make
 ```
 ## Run
-Within the build sub-directory, run:
+Within the build sub-directory, run the following:
 ```
 ./app/shell-app 
 ```
 ## Testing
-Within the build sub-directory, run: 
+Within the build sub-directory, run the following:
 ```
 ./test/cpp-test
 ```
