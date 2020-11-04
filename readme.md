@@ -91,10 +91,32 @@ mkdir build
 cd build
 cmake ..
 make
-Run tests: ./test/cpp-test
-Run program: ./app/shell-app
 ```
-
+## Run
+Within the build sub-directory, run:
+```
+./app/shell-app 
+```
+## Testing
+Within the build sub-directory, run: 
+```
+./test/cpp-test
+```
+ 
+## Creating Doxygen Documentation
+To install doxygen, run the following command:
+```
+sudo apt-get install doxygen
+```
+Now, from the cloned directory, run: 
+```
+doxygen docs
+```
+Generated doxygen files are in html format and latex format. 
+```
+cd html
+google-chrome index.html
+```
 ## Building for code coverage 
 ```
 sudo apt-get install lcov
