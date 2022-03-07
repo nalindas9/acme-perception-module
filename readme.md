@@ -1,6 +1,4 @@
 # ACME Perception Module
-[![Build Status](https://travis-ci.org/nalindas9/acme-perception-module.svg?branch=master)](https://travis-ci.org/github/nalindas9/acme-perception-module)
-[![Coverage Status](https://coveralls.io/repos/github/nalindas9/acme-perception-module/badge.svg?branch=master)](https://coveralls.io/github/nalindas9/acme-perception-module)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://github.com/nalindas9/acme-perception-module/blob/feature/nalindas9/initialize-repository/LICENSE)
 ---
 
